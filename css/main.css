@@ -220,14 +220,14 @@ button {
 }
 @media screen and (max-width: 768px) {
   .hero-container {
-    background: url(../img/icons_png/headset.png) center top 30% no-repeat;
+    background: url(../img/icons_png/headset.png) center top 10% no-repeat;
     background-size: 50%;
     background-color: #F5F5F5;
   }
 }
 @media screen and (max-width: 480px) {
   .hero-container {
-    background: url(../img/icons_png/headset.png) center top 20% no-repeat;
+    background: url(../img/icons_png/headset.png) center top 15% no-repeat;
     background-size: 70%;
     background-color: #F5F5F5;
   }
