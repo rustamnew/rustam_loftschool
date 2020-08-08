@@ -44,11 +44,11 @@
 .phone__icon-footer {
 
     @include tablets {
-        content: url(../../img/icons/phone_red.svg);
+        fill: #E01F3D;;
     }
     
     @include phones {
-        content: url(../../img/icons/phone.svg);
+        fill: #292929;
     }
 }
 
@@ -59,7 +59,7 @@
     }
 
     @include phones {
-        color: #292929;;
+        color: #292929;
     }
 }
 

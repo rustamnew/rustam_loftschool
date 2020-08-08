@@ -960,12 +960,12 @@ button {
 
 @media screen and (max-width: 768px) {
   .phone__icon-footer {
-    content: url(../../img/icons/phone_red.svg);
+    fill: #E01F3D;
   }
 }
 @media screen and (max-width: 480px) {
   .phone__icon-footer {
-    content: url(../../img/icons/phone.svg);
+    fill: #292929;
   }
 }
 
