@@ -59,6 +59,10 @@
     margin-bottom: rem(20px);
     text-align: left;
 
+    @include tablets {
+        text-align: center;
+    }
+
     @include phones {
         width: 80%;
     }
