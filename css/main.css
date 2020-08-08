@@ -426,7 +426,7 @@ button {
   position: relative;
 }
 .features__item:before {
-  content: url(../../img/icons_png/circles.png);
+  content: url(../img/icons_png/circles.png);
   position: absolute;
   top: 1.875rem;
   right: 0;
