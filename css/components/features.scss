@@ -1,3 +1,5 @@
+
+
 .features-container {
     &::before {
         content: "";
@@ -73,6 +75,7 @@
 
     &:last-child {
         padding-right: 0;
+        margin-bottom: 0;
 
         &::before {
             display: none;
@@ -89,7 +92,9 @@
         width: 100%;
         flex-direction: row;
         padding: 0;
-        margin-bottom: rem(30px);
+        margin-bottom: rem(24px);
+
+        
     }
 }
 

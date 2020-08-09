@@ -1,10 +1,15 @@
-
+.footer {
+    background: #ffffff;
+}
 
 .footer-container {
+    position: absolute;
+    bottom: 0;
     padding-top: rem(20px);
     padding-left: rem(86px);
     padding-right: rem(54px);
     padding-bottom: rem(18px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
 
@@ -72,6 +77,11 @@
     width: rem(30px);
     height: rem(30px);
     margin-right: rem(10px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+    
 
 
     @include phones {

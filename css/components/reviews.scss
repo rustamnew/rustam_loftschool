@@ -1,3 +1,10 @@
+.reviews-container {
+
+    @include phones {
+        width: 100%;
+    }
+}
+
 .reviews__title {
     margin-bottom: rem(32px);
 }
@@ -14,6 +21,7 @@
     }
 
     @include phones {
+        width: 100vw;
         margin-bottom: rem(40px);
     }
 }
@@ -43,6 +51,7 @@
 
 .review__content {
     width: 54%;
+    padding-top: rem(22px);
 
     @include tablets {
         width: 100%;
@@ -63,7 +72,6 @@
     font-size: rem(24px);
     line-height: rem(28px);
     color: #292929;
-    padding-top: rem(22px);
     margin-bottom: rem(28px);
 }
 
