@@ -964,6 +964,12 @@ button {
     padding: 1.1111111111rem 3.8888888889rem;
   }
 }
+@media screen and (max-width: 320px) {
+  .footer-container {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+}
 
 @media screen and (max-width: 480px) {
   .footer__info {
