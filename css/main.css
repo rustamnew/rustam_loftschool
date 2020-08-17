@@ -1183,9 +1183,13 @@ button {
 
 .shop__feature {
   margin-bottom: 1.3888888889rem;
-  cursor: pointer;
   width: 5.0555555556rem;
   height: 5.0555555556rem;
+  display: flex;
+}
+.shop__feature:hover .shop__feature-list {
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 768px) {
   .shop__feature {
@@ -1196,6 +1200,50 @@ button {
 .shop__feature-icon {
   width: 5.0555555556rem;
   height: 5.0555555556rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.shop__feature-list {
+  padding: 1.5555555556rem 1.3888888889rem;
+  background-color: #d6d6d6;
+  border-radius: 4px;
+  flex-shrink: 0;
+  width: 15.2222222222rem;
+  height: 16.6666666667rem;
+  display: none;
+  z-index: 10;
+}
+
+.feature {
+  display: flex;
+  margin-bottom: 1.5555555556rem;
+}
+
+.feature__icon {
+  height: 1.3333333333rem;
+  width: 1.6666666667rem;
+  margin-right: 1.1111111111rem;
+}
+
+.feature {
+  display: flex;
+  justify-content: flex-start;
+}
+.feature__name {
+  font-family: Play;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8888888889rem;
+  line-height: 1.3333333333rem;
+}
+.feature__value {
+  font-family: Play;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8888888889rem;
+  line-height: 1.3333333333rem;
+  margin-left: auto;
 }
 
 .shop__title {

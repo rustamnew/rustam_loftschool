@@ -141,9 +141,16 @@
 
 .shop__feature {
     margin-bottom: rem(25px);
-    cursor: pointer;
     width: rem(91px);
     height: rem(91px);
+
+    display: flex;
+
+    &:hover .shop__feature-list {
+        display: flex;
+        flex-direction: column;
+    }
+
 
     @include tablets {
         display: none;
@@ -153,6 +160,59 @@
 .shop__feature-icon {
     width: rem(91px);
     height: rem(91px);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.shop__feature-list {
+    padding: rem(28px) rem(25px);
+    background-color: #d6d6d6;
+    border-radius: 4px;
+    flex-shrink: 0;
+    width: rem(274px);
+    height: rem(300px);
+    display: none;
+
+    z-index: 10;
+
+}
+
+.feature {
+    display: flex;
+    margin-bottom: rem(28px);
+}
+
+.feature__icon {
+    height: rem(24px);
+    width: rem(30px);
+
+    margin-right: rem(20px);
+}
+
+.feature {
+
+    display: flex;
+    justify-content: flex-start;
+
+
+
+    &__name {
+        font-family: Play;
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(16px);
+        line-height: rem(24px);
+    }
+
+    &__value {
+        font-family: Play;
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(16px);
+        line-height: rem(24px);
+
+        margin-left: auto;;
+    }
 }
 
 
