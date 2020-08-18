@@ -1215,11 +1215,6 @@ button {
   z-index: 10;
 }
 
-.feature {
-  display: flex;
-  margin-bottom: 1.5555555556rem;
-}
-
 .feature__icon {
   height: 1.3333333333rem;
   width: 1.6666666667rem;
@@ -1229,6 +1224,10 @@ button {
 .feature {
   display: flex;
   justify-content: flex-start;
+  margin-bottom: 1.5555555556rem;
+}
+.feature:last-child {
+  margin-bottom: 0;
 }
 .feature__name {
   font-family: Play;
