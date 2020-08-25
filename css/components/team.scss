@@ -23,6 +23,24 @@
     }
 }
 
+.team__list.desktop {
+    display: flex;
+
+    @include tablets {
+        display: none;
+    }
+}
+
+.team__list.mobile {
+    display: none;
+
+    @include tablets {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 .team__item {
     margin-right: rem(20px);
     flex: 1;
@@ -156,3 +174,5 @@
         width: 80%;
     }
 }
+
+

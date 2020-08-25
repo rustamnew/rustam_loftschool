@@ -68,7 +68,7 @@ if (viewportWidth <= 768) {
 }
 
 if (viewportWidth <= 480) {
-    var slideWidth = 470
+    var slideWidth = viewportWidth - 10;
 }
 
 

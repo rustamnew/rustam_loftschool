@@ -1386,6 +1386,12 @@ button {
   height: 80vh;
 }
 
+@media screen and (max-width: 768px) {
+  .bx-wrapper .bx-controls-direction a {
+    top: 30%;
+  }
+}
+
 .menu-mobile {
   position: fixed;
   top: 0;
@@ -1447,6 +1453,25 @@ button {
     display: none;
   }
   .team__list-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.team__list.desktop {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .team__list.desktop {
+    display: none;
+  }
+}
+
+.team__list.mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .team__list.mobile {
     display: flex;
     flex-direction: column;
   }

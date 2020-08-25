@@ -334,8 +334,16 @@
 
 .bx-wrapper .bx-next {
     right: 0;
+
+    
 }
 
 .bx-wrapper .bx-viewport {
     height: 80vh;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    @include tablets {
+        top: 30%
+    }
 }
