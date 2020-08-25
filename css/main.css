@@ -1385,7 +1385,7 @@ button {
 }
 
 .bx-wrapper .bx-viewport {
-  height: 100vh;
+  height: 80vh;
 }
 
 @media screen and (max-width: 768px) {
