@@ -40,9 +40,6 @@
     align-items: center;
     justify-content: center;
 
-    @include phones {
-        padding-top: rem(40px);
-    }
 }
 
 .slider__arrow {
@@ -123,7 +120,7 @@
 
     @include phones {
         margin-left: 0;
-        margin-bottom: rem(20px);
+        margin-bottom: rem(50px);
         width: 80%;
         height: 80%;
     }
@@ -238,7 +235,7 @@
     }
 
     @include phones {
-        width: 80%;
+        width: 70%;
     }
 }
 
@@ -260,7 +257,6 @@
 
     @include phones {
         width: 80%;
-        margin-bottom: rem(25px);
     }
 }
 
