@@ -536,6 +536,8 @@ button {
 @media screen and (max-width: 480px) {
   .reviews-container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -550,6 +552,7 @@ button {
 @media screen and (max-width: 480px) {
   .reviews__list {
     min-height: 25rem;
+    margin-bottom: 2.2222222222rem;
   }
 }
 
@@ -670,7 +673,6 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5.5555555556rem;
 }
 
 .reviews__selector-item {
