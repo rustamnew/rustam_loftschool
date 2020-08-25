@@ -1109,6 +1109,11 @@ button {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 480px) {
+  .slider__item {
+    padding-top: 2.2222222222rem;
+  }
+}
 
 .slider__arrow-left {
   cursor: pointer;
@@ -1182,7 +1187,7 @@ button {
 @media screen and (max-width: 480px) {
   .shop__picture {
     margin-left: 0;
-    margin-bottom: 2.7777777778rem;
+    margin-bottom: 1.1111111111rem;
     width: 80%;
     height: 80%;
   }
@@ -1284,7 +1289,7 @@ button {
 }
 @media screen and (max-width: 480px) {
   .shop__title {
-    width: 70%;
+    width: 80%;
   }
 }
 
@@ -1306,6 +1311,7 @@ button {
 @media screen and (max-width: 480px) {
   .shop__description {
     width: 80%;
+    margin-bottom: 1.3888888889rem;
   }
 }
 
