@@ -543,11 +543,29 @@ button {
   margin-bottom: 1.7777777778rem;
 }
 
+.reviews__list {
+  min-height: 19.4444444444rem;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .reviews__list {
+    min-height: 25rem;
+  }
+}
+
+.reviews__item {
+  position: absolute;
+  opacity: 0;
+}
+
+.active-review {
+  opacity: 1;
+}
+
 .review {
   display: flex;
   background-color: #F8FAF9;
   padding: 2.3333333333rem;
-  margin-bottom: 0.8888888889rem;
 }
 @media screen and (max-width: 768px) {
   .review {
@@ -558,7 +576,6 @@ button {
 @media screen and (max-width: 480px) {
   .review {
     width: 100vw;
-    margin-bottom: 2.2222222222rem;
   }
 }
 
@@ -653,6 +670,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5.5555555556rem;
 }
 
 .reviews__selector-item {
@@ -689,7 +707,7 @@ button {
   }
 }
 
-.reviews__item-img {
+.reviews__selector-item-img {
   object-fit: cover;
 }
 
@@ -767,6 +785,9 @@ button {
 .form__input:focus {
   border-color: #E01F3D;
   outline: none;
+}
+.form__input-error {
+  border-color: red;
 }
 .form__input-textarea {
   height: 8.8888888889rem;
@@ -1049,7 +1070,7 @@ button {
 }
 
 .slider-container {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .slider-container::before {
   content: "";
@@ -1347,6 +1368,20 @@ button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.bx-wrapper {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.bx-wrapper .bx-prev {
+  left: 0;
+}
+
+.bx-wrapper .bx-next {
+  right: 0;
+}
+
 .menu-mobile {
   position: fixed;
   top: 0;
@@ -1391,4 +1426,160 @@ button {
   width: 1.1111111111rem;
   height: 1.1111111111rem;
   fill: #FFFFFF;
+}
+
+.team-section__title {
+  margin-bottom: 2.9444444444rem;
+}
+
+.team__list-desktop {
+  display: flex;
+}
+.team__list-mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .team__list-desktop {
+    display: none;
+  }
+  .team__list-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.team__item {
+  margin-right: 1.1111111111rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team__item:last-child {
+  margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+  .team__item {
+    margin-right: 0;
+    margin-bottom: 0.8888888889rem;
+  }
+  .team__item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.team__img {
+  margin-bottom: 1.3888888889rem;
+}
+
+.team__name {
+  cursor: pointer;
+  font-family: Play;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.1666666667rem;
+  text-align: center;
+  color: #000000;
+  position: relative;
+  margin-bottom: 0.6111111111rem;
+}
+.team__name::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 0.5555555556rem;
+  right: -0.8333333333rem;
+  border: 5px solid transparent;
+  border-top: 5px solid #E01F3D;
+}
+.team__name-active::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 0.2777777778rem;
+  right: -0.8333333333rem;
+  border: 5px solid transparent;
+  border-bottom: 5px solid #E01F3D;
+}
+@media screen and (max-width: 480px) {
+  .team__name {
+    font-family: Alegreya Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2222222222rem;
+    line-height: 1.3888888889rem;
+  }
+}
+
+.team__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+@media screen and (max-width: 768px) {
+  .team__description-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.team__description-title {
+  font-family: Play;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8888888889rem;
+  line-height: 1.0555555556rem;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 0.2222222222rem;
+}
+@media screen and (max-width: 768px) {
+  .team__description-title {
+    font-family: Play;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.1666666667rem;
+  }
+}
+
+.team__description-text {
+  font-family: Play;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.8888888889rem;
+  line-height: 1.0555555556rem;
+  text-align: center;
+  color: #666666;
+}
+@media screen and (max-width: 768px) {
+  .team__description-text {
+    width: 80%;
+  }
+}
+
+.modal {
+  display: none;
+}
+
+.modal__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__content {
+  font-family: Play;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.3333333333rem;
+  margin-bottom: 1rem;
 }

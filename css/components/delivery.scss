@@ -74,6 +74,10 @@
         outline: none;
     }
 
+    &-error {
+        border-color: red;
+    }
+
     &-textarea {
         height: rem(160px);
         resize: none;

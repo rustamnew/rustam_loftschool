@@ -9,11 +9,28 @@
     margin-bottom: rem(32px);
 }
 
+.reviews__list {
+    min-height: rem(350px);
+    position: relative;
+
+    @include phones {
+        min-height: rem(450px);
+    }
+}
+
+.reviews__item {
+    position: absolute;
+    opacity: 0;
+}
+
+.active-review {
+    opacity: 1;
+}
+
 .review {
     display: flex;
     background-color: #F8FAF9;
     padding: rem(42px);
-    margin-bottom: rem(16px);
 
     @include tablets {
         flex-direction: column;
@@ -22,7 +39,6 @@
 
     @include phones {
         width: 100vw;
-        margin-bottom: rem(40px);
     }
 }
 
@@ -110,6 +126,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-top: rem(100px);
 }
 
 .reviews__selector-item {
@@ -145,6 +163,6 @@
     }
 }
 
-.reviews__item-img {
+.reviews__selector-item-img {
     object-fit: cover;
 }

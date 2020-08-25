@@ -1,5 +1,5 @@
 .slider-container {
-    overflow: hidden;
+    overflow-x: hidden;
 
     &::before {
         content: "";
@@ -320,4 +320,18 @@
     &-rub {
         font-family: Arial, Helvetica, sans-serif;
     }
+}
+
+.bx-wrapper  {
+    border: none; 
+    box-shadow: none;
+    background: none;
+}
+
+.bx-wrapper .bx-prev {
+    left: 0;
+}
+
+.bx-wrapper .bx-next {
+    right: 0;
 }
