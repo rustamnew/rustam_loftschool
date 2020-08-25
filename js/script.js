@@ -64,11 +64,18 @@ console.log(viewportWidth);
 
 
 if (viewportWidth <= 768) {
-    var slideWidth = 700
+    var slideWidth = viewportWidth - 80;
 }
+
 if (viewportWidth <= 480) {
     var slideWidth = 470
 }
+
+
+console.log(slideWidth);
+
+
+
 
 $('.slider__list').bxSlider({
     pager: false,

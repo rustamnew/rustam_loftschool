@@ -1382,6 +1382,10 @@ button {
   right: 0;
 }
 
+.bx-wrapper .bx-viewport {
+  height: 80vh;
+}
+
 .menu-mobile {
   position: fixed;
   top: 0;
