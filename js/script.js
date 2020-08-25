@@ -63,7 +63,6 @@ let viewportWidth = window.innerWidth;
 console.log(viewportWidth);
 
 
-
 if (viewportWidth <= 768) {
     var slideWidth = viewportWidth - 80;
 }
