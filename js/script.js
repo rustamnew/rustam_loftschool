@@ -61,7 +61,7 @@ $('.team__item').click(e => {
 // слайдер
 let viewportWidth = window.innerWidth;
 console.log(viewportWidth);
-console.log(slideWidth);
+
 
 
 if (viewportWidth <= 768) {
