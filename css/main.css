@@ -1619,5 +1619,6 @@ button {
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.3333333333rem;
+  text-align: center;
   margin-bottom: 1rem;
 }
