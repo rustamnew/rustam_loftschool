@@ -1709,12 +1709,6 @@ button {
   width: 500px;
   padding: 31px 38px;
 }
-@media screen and (max-width: 768px) {
-  .active-description {
-    width: 0;
-  }
-}
-
 .color__description-text {
   font-family: Alegreya Sans;
   font-style: normal;
