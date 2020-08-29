@@ -1635,7 +1635,7 @@ button {
 .colors {
   display: flex;
   flex-direction: row;
-  background: url(../../img/icons_png/colors1.png) center center/cover no-repeat;
+  background: url(./img/icons_png/colors1.png) center center/cover no-repeat;
 }
 
 .colors-container {
