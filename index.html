@@ -17,6 +17,8 @@
     <!--fancybox-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    
 </head>
 
 <body>
@@ -548,6 +550,80 @@
                 
             </section>
 
+            <section class="section colors">
+                    <div class="section__title colors-title">цвета</div>
+
+                    <ul class="colors__list">
+                        <li class="colors__item color gray">
+                            <div class="color__title">«Атласное серебро»</div>
+                            
+                            <div class="color__description">
+                                <div class="color__description-text">
+                                    Наушники Beats Solo3 могут работать до 40 часов без подзарядки, 
+                                    чтобы вы могли пользоваться ими каждый день. 5‑минутной
+                                    зарядки Fast Fuel хватит ещё на 3 часа воспроизведения. 
+                                    Фирменное звучание Beats в наушниках с технологией Bluetooth 
+                                    класса 1 будет сопровождать вас повсюду — куда бы вы ни 
+                                    отправились. Расположение чашек с мягкими амбушюрами можно 
+                                    регулировать — вы сможете носить их целый день.
+                                </div>
+
+                                <div class="color__close-button">
+                                    <svg class="color__close-icon">
+                                        <use xlink:href="./img/icons/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                        <li class="colors__item color black">
+                            <div class="color__title">«Чёрный матовый»</div>
+
+                            <div class="color__description">
+                                <div class="color__description-text">
+                                    Наушники Beats Solo3 могут работать до 40 часов без подзарядки, 
+                                    чтобы вы могли пользоваться ими каждый день. 5‑минутной
+                                    зарядки Fast Fuel хватит ещё на 3 часа воспроизведения. 
+                                    Фирменное звучание Beats в наушниках с технологией Bluetooth 
+                                    класса 1 будет сопровождать вас повсюду — куда бы вы ни 
+                                    отправились. Расположение чашек с мягкими амбушюрами можно 
+                                    регулировать — вы сможете носить их целый день.
+                                </div>
+
+                                <div class="color__close-button">
+                                    <svg class="color__close-icon">
+                                        <use xlink:href="./img/icons/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="colors__item color red">
+                            <div class="color__title">«Красный цитрус»</div>
+
+                            <div class="color__description">
+                                <div class="color__description-text">
+                                    Наушники Beats Solo3 могут работать до 40 часов без подзарядки, 
+                                    чтобы вы могли пользоваться ими каждый день. 5‑минутной
+                                    зарядки Fast Fuel хватит ещё на 3 часа воспроизведения. 
+                                    Фирменное звучание Beats в наушниках с технологией Bluetooth 
+                                    класса 1 будет сопровождать вас повсюду — куда бы вы ни 
+                                    отправились. Расположение чашек с мягкими амбушюрами можно 
+                                    регулировать — вы сможете носить их целый день.
+                                </div>
+
+                                <div class="color__close-button">
+                                    <svg class="color__close-icon">
+                                        <use xlink:href="./img/icons/sprite.svg#close"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+            </section>
+
             <section class="section reviews">
                 <div class="container reviews-container">
                     <div class="section__title reviews__title">Отзывы</div>
@@ -639,6 +715,12 @@
                             </a>
                         </li>
                     </ul>
+                </div>
+            </section>
+
+            <section class="section video">
+                <div class="container">
+                    <div class="section__title">как мы работаем</div>
                 </div>
             </section>
 
@@ -737,9 +819,7 @@
 
             <section class="section contacts">
                 <div class="container contacts-container">
-                    <div class="contacts__map">
-                        <img src="./img/icons_png/map1100.png" alt="" class="contacts__map-img">
-                    </div>
+                    <div class="contacts__map" id="map"></div>
                 </div>
                 
                 <div class="container footer footer-container">
@@ -873,6 +953,8 @@
         </div>
     </div>
 
+    <!--yandex map-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
     <script src="./js/script.js"></script>
 </body>
 

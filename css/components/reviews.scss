@@ -16,7 +16,7 @@
     min-height: rem(350px);
     position: relative;
 
-    @include phones {
+    @include tablets {
         min-height: rem(450px);
         margin-bottom: rem(40px);
     }

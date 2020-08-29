@@ -60,7 +60,6 @@ $('.team__item').click(e => {
 
 // слайдер
 let viewportWidth = window.innerWidth;
-console.log(viewportWidth);
 
 
 if (viewportWidth <= 768) {
@@ -70,11 +69,6 @@ if (viewportWidth <= 768) {
 if (viewportWidth <= 480) {
     var slideWidth = viewportWidth - 10;
 }
-
-
-console.log(slideWidth);
-
-
 
 
 $('.slider__list').bxSlider({
@@ -158,11 +152,11 @@ $('.form').submit( e => {
                 })
             },
         })
+
+        const fields = $('.form__input');
+        fields.val('');
     }
 
-    
-
-    
 })
 
 $('.submit-button').click( e => {
@@ -171,5 +165,275 @@ $('.submit-button').click( e => {
     $.fancybox.close();
 })
 
+
+
+//горизонтальный аккордеон
+
+$('.color__title').click( e => {
+
+    const item = $(e.currentTarget);
+    
+    const description = item.siblings('.color__description');
+
+    const items = $('.color__description');
+    items.removeClass('active-description');
+
+    if (description.width() == 0) {
+        description.addClass('active-description');
+    } else if (description.width > 0) {
+        description.removeClass('.active-description');
+    }
+
+
+
+    console.log(description.width())
+})
+
+
+$('.color__close-button').click( e => {
+    const item = $(e.currentTarget);
+    const description = item.closest('.color__description');
+
+    description.removeClass('active-description');
+})
+
+/*
+const windowWidth = $(window).width();
+console.log(windowWidth)
+
+const mesureWidth = item => {
+    const screenWidth = $(window).width();
+    
+    const container = item.closest('.colors__list');
+    console.log(container);
+
+    const titleBlocks = container.find('.color__title');
+    console.log(titleBlocks);
+
+    const titleWidth = titleBlocks.width() * titleBlocks.length;
+    console.log(titleWidth);
+
+    const reqWidth = screenWidth - 3 * 104;
+    const reqWidthString = reqWidth.toString() +'px';
+    return reqWidthString
+}
+*/
+/*
+if (windowWidth > 768) {
+    $('.color__title').click( e => {
+
+        const item = $(e.currentTarget);
+        
+        const description = item.siblings('.color__description');
+    
+        const items = $('.color__description');
+        items.removeClass('active-description');
+    
+        if (description.width() == 0) {
+            description.addClass('active-description');
+        } else if (description.width > 0) {
+            description.removeClass('.active-description');
+        }
+    
+    
+    
+        console.log(description.width())
+    })
+    
+    
+    $('.color__close-button').click( e => {
+        const item = $(e.currentTarget);
+        const description = item.closest('.color__description');
+    
+        description.removeClass('active-description');
+    })
+} else if (windowWidth <= 768) {
+    $('.color__title').click( e => {
+
+        const item = $(e.currentTarget);
+        console.log(mesureWidth(item))
+        const description = item.siblings('.color__description');
+        console.log(description)
+    
+        const items = $('.color__description');
+        items.removeClass('active-description');
+    
+        console.log(description.width())
+        if (description.width() == 0) {
+            console.log('desc width = 0')
+            description.addClass('active-description');
+            
+            description[0].style.width = mesureWidth();
+            
+        } else {
+            console.log('desc width > 0')
+            description.width(0)
+            description.removeClass('.active-description');
+            description[0].style.width = '0px'
+        }
+        
+    
+        
+    })
+    
+    
+    $('.color__close-button').click( e => {
+        const item = $(e.currentTarget);
+        const description = item.closest('.color__description');
+    
+        description.removeClass('active-description');
+    })
+}
+/*
+const openItem = item => {
+    const hiddenContent = item.find('.color__description');
+    const reqWidth = mesureWidth()
+
+    hiddenContent.width(reqWidth);
+    hiddenContent.addClass('active-description');
+}
+
+const closeItems = container => {
+    console.log('close');
+
+    const items = container.find('.color__description')
+    const content = container.find('.color__description');
+
+    items.removeClass('active-description')
+    content.width(0)
+}
+
+$('.color__title').click( e => {
+    const $this = $(e.currentTarget);
+    const item = $this.closest('.colors__item');
+    const desc = $this.siblings('.color__description');
+    const itemOpened = desc.hasClass('active-description');
+    console.log(itemOpened);
+
+    const container = $this.closest('.colors__list');
+
+    if (itemOpened) {
+        console.log('itemOpenedTrue');
+        closeItems(container)
+    } else {
+        openItem(item)
+    }
+    
+    openItem(item)
+});
+
+const mesureWidth = item => {
+    /*const screenWidth = $(window).width();
+    
+    const container = item.closest('.colors__list');
+    console.log();
+
+    const titleBlocks = container.find('.colors__item');
+    console.log();
+
+    const titleWidth = titleBlocks.width() * titleBlocks.length;
+    console.log();
+
+    console.log(titleWidth);
+   
+    return 500;
+}
+*/
+
+
+
+//onepage scroll 
+
+const sections = $('.section');
+const display = $('.maincontent');
+
+
+const performTransition = sectionEq => {
+    const position = sectionEq * -100;
+
+    display.css({
+        transform: `translateY(${position}%)`
+    })
+}
+
+var transitionNumber = 0;
+var inScroll = false;
+
+$(window).on('wheel', e => {
+    const deltaY = e.originalEvent.deltaY;
+
+    if (inScroll == false) {
+        inScroll = true;
+
+        if (transitionNumber > 0) {
+            if (deltaY < 0) {
+                transitionNumber--;
+                performTransition(transitionNumber);
+            }
+        }
+    
+        if (transitionNumber < 8) {
+            if (deltaY > 0) {
+                transitionNumber++;
+                performTransition(transitionNumber);
+            }
+        }
+
+        setTimeout(() => {
+            inScroll = false;
+        }, 90);
+    }
+
+})
+
+$(window).on('keydown', e=> {
+    
+})
+
+//сделать через prev() next()
+
+
+
+
+
+
+
+//Яндекс карты
+
+let myMap;
+
+const init = () => {
+    myMap = new ymaps.Map('map', {
+    center: [55.742049, 37.584159],
+    zoom: 15,
+    controls: [],
+    });
+
+    const coords = [
+        [55.743364, 37.578186],
+        [55.748689, 37.588957],
+        [55.743460, 37.588440],
+        [55.750330, 37.582549],
+        
+    ];
+
+    const myCollection = new ymaps.GeoObjectCollection({}, {
+        draggable: false,
+        iconLayout: 'default#image',
+        iconImageHref: './img/icons/map.svg',
+        iconImageSize: [46, 57],
+        iconImageOffset: [-35, 52]
+    });
+
+    coords.forEach(coord => {
+        myCollection.add(new ymaps.Placemark(coord));
+    });
+
+    myMap.geoObjects.add(myCollection);
+
+    myMap.behaviors.disable('scrollZoom');
+}
+
+ymaps.ready(init);
 
 
