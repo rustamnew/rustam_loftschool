@@ -448,11 +448,11 @@ $(".player__start").click(e => {
   if (playerContainer.hasClass("paused")) {
     playerContainer.removeClass("paused");
     player.pauseVideo();
-    e.currentTarget.style.background = 'url(../img/icons_png/video-play.png) left center no-repeat'
+    e.currentTarget.style.background = 'url(./img/icons_png/video-play.png) left center no-repeat'
   } else {
     playerContainer.addClass("paused");
     player.playVideo();
-    e.currentTarget.style.background = 'url(../img/icons_png/video-pause.png) left no-repeat';
+    e.currentTarget.style.background = 'url(./img/icons_png/video-pause.png) left center no-repeat';
 
   }
 });
