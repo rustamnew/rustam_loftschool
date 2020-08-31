@@ -269,12 +269,16 @@ if (windowWidth > 768) {
 
         const titleBlocks1 = container1.find('.color__title');
 
-        titleBlocks1[0].style.display = 'none';
+        /*titleBlocks1[0].style.display = 'none';
         titleBlocks1[1].style.display = 'none';
         titleBlocks1[2].style.display = 'none';
 
-        e.currentTarget.style.display = 'block';
+        e.currentTarget.style.display = 'block';*/
 
+
+        
+        
+        //Сделать чтобы сначала разъезжалось а потом дисплей нон
 
     
         if (description.width() == 0) {

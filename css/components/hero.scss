@@ -55,6 +55,10 @@
         flex-direction: column;
         align-items: center;
     }
+
+    @include phones {
+        margin-bottom: rem(40px);
+    }
 }
 
 .preview__title {

@@ -252,6 +252,11 @@ button {
     align-items: center;
   }
 }
+@media screen and (max-width: 480px) {
+  .preview {
+    margin-bottom: 2.2222222222rem;
+  }
+}
 
 .preview__title {
   margin-bottom: 1.1111111111rem;
@@ -1664,6 +1669,7 @@ button {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  position: relative;
   flex: 1;
   height: 100%;
 }
@@ -1685,6 +1691,7 @@ button {
   white-space: nowrap;
   -webkit-user-select: none;
           user-select: none;
+  transition: 0.5s;
   padding: 30px 32px;
   height: 100%;
   writing-mode: vertical-rl;

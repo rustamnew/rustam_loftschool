@@ -35,6 +35,8 @@
     justify-content: flex-end;
     align-items: flex-end;
 
+    position: relative;
+
     flex: 1;
 
     height: 100%;
@@ -59,6 +61,9 @@
     cursor: pointer;
     white-space: nowrap;
     user-select: none;
+
+    transition: 0.5s;
+
     padding: 30px 32px;
     height: 100%;
 
