@@ -1,6 +1,7 @@
 .colors {
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;   
+    position: relative; 
     
 
     background: url(../img/icons_png/colors1.png) center center/cover no-repeat;
@@ -14,12 +15,22 @@
 }
 
 .colors-title {
+    position: absolute;
+    top: 15%;
+    left: 6%;
+    z-index: 1;
     color: #ffffff;
+    
 
-    padding: rem(115px) rem(84px);
+    @include phones {
+        left: 2%;
+        top: 13%;
+    }
+
 }
 
 .colors__list {
+    z-index: 2;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -53,6 +64,11 @@
 
     writing-mode: vertical-rl;
     transform: rotate(180deg);
+
+
+    @include phones {
+        padding: 24px 26px;
+    }
 }
 
 .color.gray {

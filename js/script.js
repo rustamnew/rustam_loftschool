@@ -167,8 +167,8 @@ $('.submit-button').click( e => {
 
 
 
-//горизонтальный аккордеон
-
+//горизонтальный аккордеон DISPLAY NONE on 480width
+/*
 $('.color__title').click( e => {
 
     const item = $(e.currentTarget);
@@ -196,8 +196,8 @@ $('.color__close-button').click( e => {
 
     description.removeClass('active-description');
 })
+*/
 
-/*
 const windowWidth = $(window).width();
 console.log(windowWidth)
 
@@ -205,21 +205,27 @@ const mesureWidth = item => {
     const screenWidth = $(window).width();
     
     const container = item.closest('.colors__list');
-    console.log(container);
 
     const titleBlocks = container.find('.color__title');
-    console.log(titleBlocks);
 
     const titleWidth = titleBlocks.width() * titleBlocks.length;
-    console.log(titleWidth);
 
-    const reqWidth = screenWidth - 3 * 104;
-    const reqWidthString = reqWidth.toString() +'px';
-    return reqWidthString
+    if (windowWidth <= 480) {
+        const reqWidth = screenWidth - 90;
+        const reqWidthString = reqWidth.toString() +'px';
+        return reqWidthString
+    } else {
+        const reqWidth = screenWidth - 3 * 104;
+        const reqWidthString = reqWidth.toString() +'px';
+        return reqWidthString
+    
+    }
+
 }
-*/
-/*
+
 if (windowWidth > 768) {
+    console.log('Аккордеон Desktop')
+
     $('.color__title').click( e => {
 
         const item = $(e.currentTarget);
@@ -228,16 +234,66 @@ if (windowWidth > 768) {
     
         const items = $('.color__description');
         items.removeClass('active-description');
+        
     
         if (description.width() == 0) {
             description.addClass('active-description');
         } else if (description.width > 0) {
             description.removeClass('.active-description');
         }
+    })
     
     
+    $('.color__close-button').click( e => {
+        const item = $(e.currentTarget);
+        const description = item.closest('.color__description');
     
-        console.log(description.width())
+        description.removeClass('active-description');
+    })
+
+} else if (windowWidth <= 480) {
+    console.log('Аккордеон Mobile')
+
+    $('.color__title').click( e => {
+
+        const item = $(e.currentTarget);
+        const description = item.siblings('.color__description');
+    
+        const items = $('.color__description');
+        items.removeClass('active-description');
+        items[0].style.width = '0px';
+        items[1].style.width = '0px';
+        items[2].style.width = '0px';
+
+        const container1 = item.closest('.colors__list');
+
+        const titleBlocks1 = container1.find('.color__title');
+
+        titleBlocks1[0].style.display = 'none';
+        titleBlocks1[1].style.display = 'none';
+        titleBlocks1[2].style.display = 'none';
+
+        e.currentTarget.style.display = 'block';
+
+
+    
+        if (description.width() == 0) {
+            console.log('desc width = 0')
+            description.addClass('active-description');
+            
+            description[0].style.width = mesureWidth(item);
+            
+        } else {
+            console.log('desc width > 0')
+            description.width(0)
+            description.removeClass('.active-description');
+            description[0].style.width = '0px'
+
+            titleBlocks1[0].style.display = 'block';
+            titleBlocks1[1].style.display = 'block';
+            titleBlocks1[2].style.display = 'block';
+        }
+        
     })
     
     
@@ -248,22 +304,26 @@ if (windowWidth > 768) {
         description.removeClass('active-description');
     })
 } else if (windowWidth <= 768) {
+    console.log('Аккордеон Tablet')
+
     $('.color__title').click( e => {
 
         const item = $(e.currentTarget);
-        console.log(mesureWidth(item))
         const description = item.siblings('.color__description');
-        console.log(description)
     
         const items = $('.color__description');
         items.removeClass('active-description');
+        items[0].style.width = '0px';
+        items[1].style.width = '0px'
+        items[2].style.width = '0px'
+
+
     
-        console.log(description.width())
         if (description.width() == 0) {
             console.log('desc width = 0')
             description.addClass('active-description');
             
-            description[0].style.width = mesureWidth();
+            description[0].style.width = mesureWidth(item);
             
         } else {
             console.log('desc width > 0')
@@ -271,8 +331,6 @@ if (windowWidth > 768) {
             description.removeClass('.active-description');
             description[0].style.width = '0px'
         }
-        
-    
         
     })
     
@@ -283,62 +341,7 @@ if (windowWidth > 768) {
     
         description.removeClass('active-description');
     })
-}
-/*
-const openItem = item => {
-    const hiddenContent = item.find('.color__description');
-    const reqWidth = mesureWidth()
-
-    hiddenContent.width(reqWidth);
-    hiddenContent.addClass('active-description');
-}
-
-const closeItems = container => {
-    console.log('close');
-
-    const items = container.find('.color__description')
-    const content = container.find('.color__description');
-
-    items.removeClass('active-description')
-    content.width(0)
-}
-
-$('.color__title').click( e => {
-    const $this = $(e.currentTarget);
-    const item = $this.closest('.colors__item');
-    const desc = $this.siblings('.color__description');
-    const itemOpened = desc.hasClass('active-description');
-    console.log(itemOpened);
-
-    const container = $this.closest('.colors__list');
-
-    if (itemOpened) {
-        console.log('itemOpenedTrue');
-        closeItems(container)
-    } else {
-        openItem(item)
-    }
-    
-    openItem(item)
-});
-
-const mesureWidth = item => {
-    /*const screenWidth = $(window).width();
-    
-    const container = item.closest('.colors__list');
-    console.log();
-
-    const titleBlocks = container.find('.colors__item');
-    console.log();
-
-    const titleWidth = titleBlocks.width() * titleBlocks.length;
-    console.log();
-
-    console.log(titleWidth);
-   
-    return 500;
-}
-*/
+} 
 
 
 
@@ -386,10 +389,6 @@ $(window).on('wheel', e => {
 
 })
 
-$(window).on('keydown', e=> {
-    
-})
-
 //сделать через prev() next()
 
 
@@ -435,5 +434,161 @@ const init = () => {
 }
 
 ymaps.ready(init);
+
+//video
+
+let player;
+const playerContainer = $(".player");
+
+
+
+$(".player__start").click(e => {
+  e.preventDefault();
+
+  if (playerContainer.hasClass("paused")) {
+    playerContainer.removeClass("paused");
+    player.pauseVideo();
+    e.currentTarget.style.background = 'url(../img/icons_png/video-play.png) left center no-repeat'
+  } else {
+    playerContainer.addClass("paused");
+    player.playVideo();
+    e.currentTarget.style.background = 'url(../../img/icons_png/video-pause.png) left no-repeat';
+
+  }
+});
+
+$(".player__playback").click(e => {
+    const bar = $(e.currentTarget);
+    const clickedPosition = e.originalEvent.layerX;
+    
+    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+    const newPlaybackPositionSec =
+      (player.getDuration() / 100) * newButtonPositionPercent;
+    
+    $(".player__playback-button").css({
+      left: `${newButtonPositionPercent}%`
+    });
+    
+    player.seekTo(newPlaybackPositionSec);
+   });
+
+$(".player__volume-level").click(e => {
+    const bar1 = $(e.currentTarget);
+    console.log(bar1);
+    const clickedPosition1 = e.originalEvent.layerX;
+    console.log(clickedPosition1);
+    
+    const newButtonPositionPercent1 = (clickedPosition1 / bar1.width()) * 100;
+    console.log(newButtonPositionPercent1);
+
+    const newPlaybackPositionSec1 = (player.getVolume() / 100) 
+    console.log(newPlaybackPositionSec1);
+
+    $(".player__volume-level-button").css({
+      left: `${newButtonPositionPercent1}%`
+    });
+    
+    player.setVolume(newButtonPositionPercent1);
+    console.log(player.getVolume())
+
+   });
+
+const formatTime = timeSec => {
+    const roundTime = Math.round(timeSec);
+    
+    const minutes = addZero(Math.floor(roundTime / 60));
+    const seconds = addZero(roundTime - minutes * 60);
+    
+    function addZero(num) {
+      return num < 10 ? `0${num}` : num;
+    }
+    
+    return `${minutes} : ${seconds}`;
+};
+
+const onPlayerReady = () => {
+    let interval;
+    const durationSec = player.getDuration();
+    
+    $(".player__duration-estimate").text(formatTime(durationSec));
+    
+    if (typeof interval !== "undefined") {
+      clearInterval(interval);
+    }
+    
+    interval = setInterval(() => {
+        const completedSec = player.getCurrentTime();
+        const completedPercent = (completedSec / durationSec) * 100;
+      
+        $(".player__playback-button").css({
+          left: `${completedPercent}%`
+        });
+       
+        $(".player__duration-completed").text(formatTime(completedSec));
+    }, 1000);
+};
+
+function onYouTubeIframeAPIReady() {
+    if (viewportWidth <= 480) {
+        player = new YT.Player('yt-player', {
+            height: '234',
+            width: '394',
+            videoId: 'V2i1YkfrM54',
+            events: {
+              'onReady': onPlayerReady,
+              //'onStateChange': onPlayerStateChange
+            },
+            playerVars: {
+                controls: 0,
+                disablekb: 0,
+                showinfo: 0,
+                rel: 0,
+                autoplay: 0,
+                modestbranding: 0
+            }
+          });
+    }
+
+    if (viewportWidth <= 768) {
+        player = new YT.Player('yt-player', {
+            height: '352',
+            width: '596',
+            videoId: 'V2i1YkfrM54',
+            events: {
+              'onReady': onPlayerReady,
+              //'onStateChange': onPlayerStateChange
+            },
+            playerVars: {
+                controls: 0,
+                disablekb: 0,
+                showinfo: 0,
+                rel: 0,
+                autoplay: 0,
+                modestbranding: 0
+            }
+          });
+    }
+
+    if (viewportWidth > 768) {
+        player = new YT.Player('yt-player', {
+            height: '405',
+            width: '660',
+            videoId: 'V2i1YkfrM54',
+            events: {
+              'onReady': onPlayerReady,
+              //'onStateChange': onPlayerStateChange
+            },
+            playerVars: {
+                controls: 0,
+                disablekb: 0,
+                showinfo: 0,
+                rel: 0,
+                autoplay: 0,
+                modestbranding: 0
+            }
+          });        
+    }
+  
+}
 
 
