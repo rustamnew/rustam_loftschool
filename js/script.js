@@ -437,7 +437,7 @@ ymaps.ready(init);
 
 //video
 
-let player;
+var player;
 const playerContainer = $(".player");
 
 
@@ -452,7 +452,7 @@ $(".player__start").click(e => {
   } else {
     playerContainer.addClass("paused");
     player.playVideo();
-    e.currentTarget.style.background = 'url(../../img/icons_png/video-pause.png) left no-repeat';
+    e.currentTarget.style.background = 'url(../img/icons_png/video-pause.png) left no-repeat';
 
   }
 });
