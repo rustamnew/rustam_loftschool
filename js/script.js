@@ -480,51 +480,6 @@ const playerContainer = $(".player");
 
 
 
-$(".player__start").click(e => {
-  e.preventDefault();
-
-  if (playerContainer.hasClass("paused")) {
-    playerContainer.removeClass("paused");
-    player.pauseVideo();
-    e.currentTarget.style.background = 'url(./img/icons_png/video-play.png) left center no-repeat'
-  } else {
-    playerContainer.addClass("paused");
-    player.playVideo();
-    e.currentTarget.style.background = 'url(./img/icons_png/video-pause.png) left center no-repeat';
-
-  }
-});
-
-$(".player__playback").click(e => {
-    const bar = $(e.currentTarget);
-    const clickedPosition = e.originalEvent.layerX;
-    
-    const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
-    const newPlaybackPositionSec =
-      (player.getDuration() / 100) * newButtonPositionPercent;
-    
-    $(".player__playback-button").css({
-      left: `${newButtonPositionPercent}%`
-    });
-    
-    player.seekTo(newPlaybackPositionSec);
-   });
-
-$(".player__volume-level").click(e => {
-    const bar1 = $(e.currentTarget);
-    const clickedPosition1 = e.originalEvent.layerX;
-    
-    const newButtonPositionPercent1 = (clickedPosition1 / bar1.width()) * 100;
-
-    const newPlaybackPositionSec1 = (player.getVolume() / 100) 
-
-    $(".player__volume-level-button").css({
-      left: `${newButtonPositionPercent1}%`
-    });
-    
-    player.setVolume(newButtonPositionPercent1);
-
-   });
 
 const formatTime = timeSec => {
     const roundTime = Math.round(timeSec);
@@ -561,8 +516,56 @@ const onPlayerReady = () => {
     }, 1000);
 };
 
+$(".player__start").click(e => {
+    e.preventDefault();
+  
+    if (playerContainer.hasClass("paused")) {
+      playerContainer.removeClass("paused");
+      player.pauseVideo();
+      e.currentTarget.style.background = 'url(./img/icons_png/video-play.png) left center no-repeat'
+    } else {
+      playerContainer.addClass("paused");
+      player.playVideo();
+      e.currentTarget.style.background = 'url(./img/icons_png/video-pause.png) left center no-repeat';
+  
+    }
+  });
+  
+  $(".player__playback").click(e => {
+      const bar = $(e.currentTarget);
+      const clickedPosition = e.originalEvent.layerX;
+      
+      const newButtonPositionPercent = (clickedPosition / bar.width()) * 100;
+      const newPlaybackPositionSec =
+        (player.getDuration() / 100) * newButtonPositionPercent;
+      
+      $(".player__playback-button").css({
+        left: `${newButtonPositionPercent}%`
+      });
+      
+      player.seekTo(newPlaybackPositionSec);
+     });
+  
+  $(".player__volume-level").click(e => {
+      const bar1 = $(e.currentTarget);
+      const clickedPosition1 = e.originalEvent.layerX;
+      
+      const newButtonPositionPercent1 = (clickedPosition1 / bar1.width()) * 100;
+  
+      const newPlaybackPositionSec1 = (player.getVolume() / 100) 
+  
+      $(".player__volume-level-button").css({
+        left: `${newButtonPositionPercent1}%`
+      });
+      
+      player.setVolume(newButtonPositionPercent1);
+  
+     });
+  
+
 function onYouTubeIframeAPIReady() {
     if (viewportWidth <= 480) {
+        console.log('test')
         player = new YT.Player('yt-player', {
             height: '234',
             width: '394',
