@@ -25,7 +25,7 @@
     <div class="wrapper">
         <div class="maincontent">
 
-            <section class="section hero">
+            <section data-section-id="hero" class="section hero">
                 <div class="container hero-container">
                     <header class="header">
                         <div class="logo">
@@ -39,31 +39,31 @@
                         <nav class="menu">
                             <ul class="menu__list">
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">О нас</a>
+                                    <a href="#" data-scroll-to="features" class="menu__link">О нас</a>
                                 </li>
 
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">Наушники</a>
+                                    <a href="#" data-scroll-to="shop" class="menu__link">Наушники</a>
                                 </li>
 
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">Команда</a>
+                                    <a href="#" data-scroll-to="team" class="menu__link">Команда</a>
                                 </li>
 
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">Цвета</a>
+                                    <a href="#" data-scroll-to="colors" class="menu__link">Цвета</a>
                                 </li>
 
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">Отзывы</a>
+                                    <a href="#" data-scroll-to="reviews" class="menu__link">Отзывы</a>
                                 </li>
 
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">Как мы работаем</a>
+                                    <a href="#" data-scroll-to="video" class="menu__link">Как мы работаем</a>
                                 </li>
 
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">Контакты</a>
+                                    <a href="#" data-scroll-to="contacts" class="menu__link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
@@ -89,7 +89,7 @@
                             Встречайте новую версию наушников из линейки Powerbeats.
                         </div>
 
-                        <a href="#" class="button">Заказать</a>
+                        <a href="#" data-scroll-to="delivery" class="button">Заказать</a>
                     </div>
 
                     <div class="bullet">
@@ -128,7 +128,7 @@
                 </div>
             </section>
 
-            <section class="section features">
+            <section data-section-id="features" class="section features">
                 <div class="container features-container">
                     <div class="features__why">
                         <div class="section__title features__title">почему beats solo 3?</div>
@@ -197,7 +197,7 @@
                 </div>
             </section>
 
-            <section class="section shop">
+            <section data-section-id="shop" class="section shop">
                  <div class="slider">
                     <div class="container slider-container">
                         <ul class="slider__list" id="sliderRoot">
@@ -398,7 +398,7 @@
                 </div>
             </section>
 
-            <section class="section team">
+            <section data-section-id="team" class="section team">
                 <div class="container">
                     <div class="section__title team-section__title">Команда</div>
 
@@ -550,12 +550,12 @@
                 
             </section>
 
-            <section class="section colors">
+            <section data-section-id="colors" class="section colors">
                     <div class="section__title colors-title">цвета</div>
 
                     <ul class="colors__list">
                         <li class="colors__item color gray">
-                            <div class="color__title">«Атласное серебро»</div>
+                            <div class="color__title" id="gray">«Атласное серебро»</div>
                             
                             <div class="color__description">
                                 <div class="color__description-text">
@@ -579,7 +579,7 @@
 
 
                         <li class="colors__item color black">
-                            <div class="color__title">«Чёрный матовый»</div>
+                            <div class="color__title" id="black">«Чёрный матовый»</div>
 
                             <div class="color__description">
                                 <div class="color__description-text">
@@ -601,7 +601,7 @@
                         </li>
 
                         <li class="colors__item color red">
-                            <div class="color__title">«Красный цитрус»</div>
+                            <div class="color__title" id="red">«Красный цитрус»</div>
 
                             <div class="color__description">
                                 <div class="color__description-text">
@@ -624,7 +624,7 @@
                     </ul>
             </section>
 
-            <section class="section reviews">
+            <section data-section-id="reviews" class="section reviews">
                 <div class="container reviews-container">
                     <div class="section__title reviews__title">Отзывы</div>
 
@@ -718,7 +718,7 @@
                 </div>
             </section>
 
-            <section class="section video">
+            <section data-section-id="video" class="section video">
                 <div class="container video-container">
                     <div class="section__title video-title">как мы работаем</div>
 
@@ -747,7 +747,7 @@
                 </div>
             </section>
 
-            <section class="section delivery">
+            <section data-section-id="delivery" class="section delivery">
                 <div class="container">
                     <div class="section__title section__title-white delivery-title">Закажите доставку</div>
 
@@ -840,7 +840,7 @@
                 </div>
             </section>
 
-            <section class="section contacts">
+            <section data-section-id="contacts" class="section contacts">
                 <div class="container contacts-container">
                     <div class="contacts__map" id="map"></div>
                 </div>
@@ -908,15 +908,16 @@
 
     <nav class="fixed-menu">
         <ul class="fixed-menu__list">
-            <li class="fixed-menu__item fixed-menu__item-active"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
-            <li class="fixed-menu__item"><a href="#" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item fixed-menu__item-active"><a href="#" data-scroll-to="hero" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="features" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="shop" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="team" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="colors" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="reviews" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="video" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="delivery" class="fixed-menu__link"></a></li>
+            <li class="fixed-menu__item"><a href="#" data-scroll-to="contacts" class="fixed-menu__link"></a></li>
+
         </ul>
     </nav>
 
@@ -935,31 +936,31 @@
 
         <ul class="menu-mobile__list">
             <li class="menu-mobile__item">
-                <a href="#" class="menu-mobile__item-link">О нас</a>
+                <a href="#" data-scroll-to="features" class="menu-mobile__item-link">О нас</a>
             </li>
 
             <li class="menu-mobile__item">
-                <a href="#" class="menu-mobile__item-link">Наушники</a>
+                <a href="#" data-scroll-to="shop" class="menu-mobile__item-link">Наушники</a>
             </li>
 
             <li class="menu-mobile__item">
-                <a href="#" class="menu-mobile__item-link">Команда</a>
+                <a href="#" data-scroll-to="team" class="menu-mobile__item-link">Команда</a>
             </li>
 
             <li class="menu-mobile__item">
-                <a href="#" class="menu-mobile__item-link">Цены</a>
+                <a href="#" data-scroll-to="colors" class="menu-mobile__item-link">Цвета</a>
             </li>
 
             <li class="menu-mobile__item">
-                <a href="#" class="menu-mobile__item-link">Отзывы</a>
+                <a href="#" data-scroll-to="reviews" class="menu-mobile__item-link">Отзывы</a>
             </li>
 
             <li class="menu-mobile__item">
-                <a href="#" class="menu-mobile__item-link">Как мы работаем</a>
+                <a href="#" data-scroll-to="video" class="menu-mobile__item-link">Как мы работаем</a>
             </li>
 
             <li class="menu-mobile__item">
-                <a href="#" class="menu-mobile__item-link">Контакты</a>
+                <a href="#" data-scroll-to="contacts" class="menu-mobile__item-link">Контакты</a>
             </li>
         </ul>
     </div>

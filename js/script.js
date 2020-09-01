@@ -167,36 +167,8 @@ $('.submit-button').click( e => {
 
 
 
-//горизонтальный аккордеон DISPLAY NONE on 480width
-/*
-$('.color__title').click( e => {
+//горизонтальный аккордеон
 
-    const item = $(e.currentTarget);
-    
-    const description = item.siblings('.color__description');
-
-    const items = $('.color__description');
-    items.removeClass('active-description');
-
-    if (description.width() == 0) {
-        description.addClass('active-description');
-    } else if (description.width > 0) {
-        description.removeClass('.active-description');
-    }
-
-
-
-    console.log(description.width())
-})
-
-
-$('.color__close-button').click( e => {
-    const item = $(e.currentTarget);
-    const description = item.closest('.color__description');
-
-    description.removeClass('active-description');
-})
-*/
 
 const windowWidth = $(window).width();
 console.log(windowWidth)
@@ -274,21 +246,13 @@ if (windowWidth > 768) {
         titleBlocks1[2].style.display = 'none';
 
         e.currentTarget.style.display = 'block';*/
-
-
-        
-        
-        
-
     
         if (description.width() == 0) {
-            console.log('desc width = 0')
             description.addClass('active-description');
             
             description[0].style.width = mesureWidth(item);
             
         } else {
-            console.log('desc width > 0')
             description.width(0)
             description.removeClass('.active-description');
             description[0].style.width = '0px'
@@ -297,7 +261,56 @@ if (windowWidth > 768) {
             titleBlocks1[1].style.display = 'block';
             titleBlocks1[2].style.display = 'block';
         }
+
         
+    })
+
+    $('#gray').click(e => {
+        console.log('click gray')
+
+        const item = $(e.currentTarget);
+        const container1 = item.closest('.colors__list');
+
+
+        const transform = container1[0].style.transform
+
+
+        if (transform == 'translateX(0px)' || transform == '') {
+
+            container1[0].style.transform = 'translateX(90px)'
+        } else if (transform == 'translateX(90px)') {
+
+            container1[0].style.transform = 'translateX(0px)'
+        } 
+    })
+    
+    $('#black').click(e => {
+        console.log('click black')
+
+        const item = $(e.currentTarget);
+        const container1 = item.closest('.colors__list');
+
+        container1[0].style.transform = 'translateX(0px)'
+    })
+
+    $('#red').click(e => {
+        console.log('click red')
+
+        const item = $(e.currentTarget);
+        const container1 = item.closest('.colors__list');
+
+        //container1[0].style.transform = 'translateX(-90px)'
+
+        const transform = container1[0].style.transform
+
+
+        if (transform == 'translateX(0px)' || transform == '') {
+
+            container1[0].style.transform = 'translateX(-90px)'
+        } else if (transform == 'translateX(-90px)') {
+
+            container1[0].style.transform = 'translateX(0px)'
+        } 
     })
     
     
@@ -324,13 +337,11 @@ if (windowWidth > 768) {
 
     
         if (description.width() == 0) {
-            console.log('desc width = 0')
             description.addClass('active-description');
             
             description[0].style.width = mesureWidth(item);
             
         } else {
-            console.log('desc width > 0')
             description.width(0)
             description.removeClass('.active-description');
             description[0].style.width = '0px'
@@ -388,10 +399,33 @@ $(window).on('wheel', e => {
 
         setTimeout(() => {
             inScroll = false;
-        }, 90);
+        }, 200);
     }
 
+    const sideMenu = $('.fixed-menu');
+    sideMenu.find('.fixed-menu__item').removeClass('fixed-menu__item-active')
+    sideMenu.find('.fixed-menu__item').eq(transitionNumber).addClass('fixed-menu__item-active');
+
 })
+
+$('[data-scroll-to]').click( e => {
+    e.preventDefault();
+
+    const $this = $(e.currentTarget);
+    const target = $this.attr('data-scroll-to');
+    const reqSection = $(`[data-section-id=${target}]`);
+    transitionNumber = reqSection.index();
+
+    performTransition(reqSection.index());
+    const sideMenu = $('.fixed-menu');
+    sideMenu.find('.fixed-menu__item').removeClass('fixed-menu__item-active')
+    sideMenu.find('.fixed-menu__item').eq(transitionNumber).addClass('fixed-menu__item-active');
+    
+})
+
+
+
+
 
 //сделать через prev() next()
 
@@ -478,22 +512,17 @@ $(".player__playback").click(e => {
 
 $(".player__volume-level").click(e => {
     const bar1 = $(e.currentTarget);
-    console.log(bar1);
     const clickedPosition1 = e.originalEvent.layerX;
-    console.log(clickedPosition1);
     
     const newButtonPositionPercent1 = (clickedPosition1 / bar1.width()) * 100;
-    console.log(newButtonPositionPercent1);
 
     const newPlaybackPositionSec1 = (player.getVolume() / 100) 
-    console.log(newPlaybackPositionSec1);
 
     $(".player__volume-level-button").css({
       left: `${newButtonPositionPercent1}%`
     });
     
     player.setVolume(newButtonPositionPercent1);
-    console.log(player.getVolume())
 
    });
 

@@ -159,6 +159,9 @@ button {
   text-decoration: none;
   white-space: nowrap;
 }
+.menu__link:hover {
+  text-decoration: underline;
+}
 
 .header__phone {
   padding-top: 0.4444444444rem;
@@ -1671,6 +1674,7 @@ button {
   align-items: flex-end;
   position: relative;
   flex: 1;
+  transition: 0.5s;
   height: 100%;
 }
 
